@@ -41,6 +41,8 @@ class CartsController < ApplicationController
   # PATCH/PUT /carts/1.json
   def update
     respond_to do |format|
+      puts "-----HELLO-------"
+      puts cart_params
       if @cart.update(cart_params)
         format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
         format.json { render :show, status: :ok, location: @cart }
@@ -54,6 +56,7 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
+    puts "-----HELLO-------"
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
     respond_to do |format|
