@@ -30,7 +30,6 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     post line_items_url, params: { product_id: products(:ruby).id },
          xhr: true
     end
-    puts @response.body
     assert_response :success
     assert_match /<tr class=\\"line-item-highlight/, @response.body
   end
@@ -56,7 +55,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       delete line_item_url(@line_item)
     end
 
-    assert_redirected_to line_items_url
+    assert_redirected_to store_index_url
   end
 
 
