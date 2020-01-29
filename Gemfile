@@ -33,7 +33,7 @@ gem 'activemodel-serializers-xml'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #
-
+gem 'i18n-js'
 gem 'webpacker', '~> 3.0'
 
 
